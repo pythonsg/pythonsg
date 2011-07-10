@@ -84,8 +84,8 @@ STATICFILES_FINDERS = (
 ADMIN_MEDIA_PREFIX = '/media-admin/'
 ADMIN_MEDIA_ROOT = os.path.join(os.path.abspath(os.path.join(PROJECT_ROOT, '..', MEDIA_DIR, 'media-admin')), '')
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'ew9jc923dsdsdkjmdstggabbclpeskk153va992skn'
+# Make this unique, and don't share it with anybody. Place a SECRET_KEY in your local_settings.py
+# SECRET_KEY = 'ew9jc923dsdsdkjmdstggabbclpeskk153va992skn'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -123,6 +123,18 @@ INSTALLED_APPS = (
     'django.contrib.gis',
 
     'homepage',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+
+    # Enable the request object in templates
+    'django.core.context_processors.request',
+
+    'django.contrib.messages.context_processors.messages',
 )
 
 # A sample logging configuration. The only tangible logging

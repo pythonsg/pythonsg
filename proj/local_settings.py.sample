@@ -3,6 +3,9 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+# Make this unique, and don't share it with anybody.
+# SECRET_KEY = 'ew9jc923dsdsdkjmdstggabbclpeskk153va992skn'
+
 DATABASES['default']['HOST'] = 'localhost'
 #CACHES = {
     #'default': {
