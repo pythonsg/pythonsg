@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # Make this unique, and don't share it with anybody.
-# SECRET_KEY = 'ew9jc923dsdsdkjmdstggabbclpeskk153va992skn'
+# SECRET_KEY = 'generate your key here: http://www.miniwebtool.com/django-secret-key-generator/'
 
 DATABASES['default']['HOST'] = 'localhost'
 #CACHES = {
