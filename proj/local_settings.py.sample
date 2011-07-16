@@ -6,7 +6,16 @@ TEMPLATE_DEBUG = DEBUG
 # Make this unique, and don't share it with anybody.
 # SECRET_KEY = 'generate your key here: http://www.miniwebtool.com/django-secret-key-generator/'
 
-DATABASES['default']['HOST'] = 'localhost'
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "pythonsg",
+        "USER": "pythonsg",
+        "PASSWORD": "pythonsg",
+        "HOST": "",
+        "PORT": "",
+    }
+}
 #CACHES = {
     #'default': {
         #'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
