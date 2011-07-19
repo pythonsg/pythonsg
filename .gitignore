@@ -12,4 +12,6 @@ proj_public/media/files/*
 proj_public/media/app/*
 proj_public/media/tmp/*
 testerbender/log
-proj_public/media/js/admin/*_aggregated.js
+proj_public/media/
+proj_public/static/*
+!proj_public/static/pythonsg/

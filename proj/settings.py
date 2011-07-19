@@ -1,23 +1,11 @@
 import os
 
+# ================
+# django settings
+# ================
+
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-    ('name', 'email@email.com'),
-)
-
-MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -42,11 +30,12 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+PROJECT_ROOT = os.path.dirname(__file__)
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-PROJECT_ROOT = os.path.dirname(__file__) 
-MEDIA_DIR = 'proj_public'
-MEDIA_ROOT = os.path.join(os.path.abspath(os.path.join(PROJECT_ROOT, '..', MEDIA_DIR, 'media')), '')
+MEDIA_ROOT = os.path.join(os.path.abspath(
+    os.path.join(PROJECT_ROOT, '..', 'proj_public', 'media')), '')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -57,17 +46,20 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(MEDIA_ROOT, 'apps')
+STATIC_ROOT = os.path.join(os.path.abspath(
+    os.path.join(PROJECT_ROOT, '..', 'proj_public', 'static')), '')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/media/apps/'
+STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    # Don't forget to use absolute paths, not relative paths
+    os.path.join(os.path.abspath(
+        os.path.join(PROJECT_ROOT, '..', 'proj_public', 'static', 'pythonsg')), ''),
 )
 
 # List of finder classes that know how to find static files in
@@ -78,20 +70,15 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media-admin/'
-ADMIN_MEDIA_ROOT = os.path.join(os.path.abspath(os.path.join(PROJECT_ROOT, '..', MEDIA_DIR, 'media-admin')), '')
-
-# Make this unique, and don't share it with anybody. Place a SECRET_KEY in your local_settings.py
-# SECRET_KEY = 'ew9jc923dsdsdkjmdstggabbclpeskk153va992skn'
+# Make this unique, and don't share it with anybody. 
+# Place a SECRET_KEY in your local_settings.py
+# SECRET_KEY = 'generate your key here: http://www.miniwebtool.com/django-secret-key-generator/'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,6 +87,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    #'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.media.PlaceholderMediaMiddleware',
 )
 
 ROOT_URLCONF = 'proj.urls'
@@ -111,6 +102,18 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
 )
 
+# ====================
+# django-cms settings
+# ====================
+CMS_TEMPLATES = (
+    ('site_base.html', 'Base'),
+)
+CMS_LANGUAGES = (
+    ('en', 'English'),
+)
+CMS_SEO_FIELDS = True
+CMS_REDIRECTS = True
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,9 +123,22 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'django.contrib.gis',
-
-    'homepage',
+    #'django.contrib.gis',
+    # django-cms related apps
+    'cms',
+    'cms.plugins.text',
+    'cms.plugins.picture',
+    'cms.plugins.link',
+    'cms.plugins.file',
+    'cms.plugins.snippet',
+    'cms.plugins.googlemap',
+    'cms.plugins.inherit',
+    'mptt',
+    'publisher',
+    'menus',
+    # useful 3rd party apps
+    'south',
+    # our own apps
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -135,6 +151,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 
     'django.contrib.messages.context_processors.messages',
+    'cms.context_processors.media',
 )
 
 # A sample logging configuration. The only tangible logging
