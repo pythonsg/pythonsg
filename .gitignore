@@ -15,3 +15,4 @@ testerbender/log
 proj_public/media/
 proj_public/static/*
 !proj_public/static/pythonsg/
+proj/db.sqlite

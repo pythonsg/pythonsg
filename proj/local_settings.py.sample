@@ -7,13 +7,13 @@ TEMPLATE_DEBUG = DEBUG
 # SECRET_KEY = 'generate your key here: http://www.miniwebtool.com/django-secret-key-generator/'
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "pythonsg",
-        "USER": "pythonsg",
-        "PASSWORD": "pythonsg",
-        "HOST": "",
-        "PORT": "",
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 #CACHES = {
