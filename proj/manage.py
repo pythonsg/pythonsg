@@ -3,7 +3,9 @@ import sys, os, re
 # change the path (reverse line order! last line is the first path searched)
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '_thirdparty'))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../django-trunk'))
+# TODO martin: Fix issues with django-cms develop branch and django_trunk,
+# then use trunk again
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../django-trunk'))
 sys.path.insert(0, '')
 
 from django.core.management import execute_manager
