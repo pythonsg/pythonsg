@@ -23,10 +23,8 @@ local development environment quickly (assuming you use virtualenvwrapper):
 
   * mkvitualenv -p python2.7 pythonsg
   * workon pythonsg
-  * cd /path/to/your/new/venv/lib/python2.7/site-packages
-  * ln -s ~/path/to/your/fork/of/pythonsg/django-trunk/django/
-  * cd into the root directory of your fork
-  * pip install -r requirements.txt
+  * cd into the root directory of your pythonsg clone
+  * pip install --upgrade -r requirements.txt
   * cd proj
   * cp local_settings.py.sample local_settings.py
   * ./manage.py syncdb --migrate

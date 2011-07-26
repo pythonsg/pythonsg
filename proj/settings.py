@@ -89,8 +89,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
-    #'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.media.PlaceholderMediaMiddleware',
+    #'cms.middleware.toolbar.ToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'proj.urls'
@@ -106,7 +106,7 @@ TEMPLATE_DIRS = (
 # django-cms settings
 # ====================
 CMS_TEMPLATES = (
-    ('site_base.html', 'Base'),
+    ('standard.html', 'Standard'),
 )
 CMS_LANGUAGES = (
     ('en', 'English'),
@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'mptt',
     'publisher',
     'menus',
+    'sekizai',
     # useful 3rd party apps
     'south',
     # our own apps
@@ -152,6 +153,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
     'django.contrib.messages.context_processors.messages',
     'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
 )
 
 # A sample logging configuration. The only tangible logging
