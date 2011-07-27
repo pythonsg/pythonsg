@@ -35,4 +35,13 @@ local development environment quickly (assuming you use virtualenvwrapper):
   * ln -s /path/to/your/venv/lib/python2.7/site-packages/cms/media/cms
   * cd ../../proj/
   * ./manage.py runserver
-  
+
+Loading initial data
+=====================
+
+If you want to load your fresh database with some initial testdata, you can use
+our fixtures::
+
+  ./manage.py loaddata fixtures/cms.json
+  ./manage.py loaddata fixtures/cms.plugins.text.json
+  ./manage.py loaddata fixtures/cmsplugin_blog.json
