@@ -2,3 +2,5 @@ django==1.3
 django-cms==2.1.3
 django-sekizai
 south
+cmsplugin-blog
+-e git+git://github.com/bitmazk/cmsplugin_blog_paginated.git#egg=cmsplugin_blog_paginated

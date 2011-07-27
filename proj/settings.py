@@ -18,13 +18,14 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = (('en', 'English'),)
 
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
@@ -114,6 +115,19 @@ CMS_LANGUAGES = (
 CMS_SEO_FIELDS = True
 CMS_REDIRECTS = True
 
+# ========================
+# cmsplugin-blog settings
+# ========================
+CMSPLUGIN_BLOG_PLACEHOLDERS = ('content',)
+JQUERY_JS = 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'
+JQUERY_UI_JS = 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js'
+JQUERY_UI_CSS = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css'
+
+# ==================================
+# cmsplugin-blog-paginated settings
+# ==================================
+BLOG_PAGINATE_BY = 15
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,6 +151,12 @@ INSTALLED_APPS = (
     'publisher',
     'menus',
     'sekizai',
+    # cmsplugin-blog related apps
+    'cmsplugin_blog',
+    'djangocms_utils',
+    'simple_translation',
+    'tagging',
+    'cmsplugin_blog_paginated',
     # useful 3rd party apps
     'south',
     # our own apps
