@@ -21,7 +21,7 @@ Installation
 After forking this project, the following commands should get you a working
 local development environment quickly (assuming you use virtualenvwrapper):
 
-  * mkvitualenv -p python2.7 pythonsg
+  * mkvirtualenv -p python2.7 pythonsg
   * workon pythonsg
   * cd into the root directory of your pythonsg clone
   * pip install --upgrade -r requirements.txt
