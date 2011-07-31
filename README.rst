@@ -56,7 +56,7 @@ Once you have your postgresql database installed locally, create your local db b
 
 - In your local_settings.py file, make sure you specify your postgresql database in the format
   
-  .. code-block:: python
+  ::
 
   DATABASES = {
       'default': {
