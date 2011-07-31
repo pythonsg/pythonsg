@@ -52,32 +52,34 @@ If you are using a Mac, and you are using MacPorts::
 
     sudo port install postgresql90 postgresql90-server
 
-Once you have your postgresql database installed locally, create your local db by using these commands:-
+Once you have your postgresql database installed locally, create your local db as follows.
 
-- In your local_settings.py file, make sure you specify your postgresql database in the format::
-  
-  DATABASES = {
+1. local_settings.py
+-------------------------------
 
-      'default': {
+In your local_settings.py file, make sure you specify your postgresql database in the format -
 
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+::
 
-          'NAME': 'whataveryourlocalpostgresqldbis',
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'whateveryourlocalpostgresqldbis',
+            'USER': 'whateveryourlocalpostgresqluseris',
+            'PASSWORD': 'whateveryourpasswordis',
+            'HOST': '',
+        }
+    }
 
-          'USER': 'whateveryourlocalpostgresqluseris',
 
-          'PASSWORD': 'whateveryourpasswordis',
+2. Create the corresponding postgresql database name, user and password
+---------------------------------------------------------------------------
 
-          'HOST': '',
+::
 
-      }
-
-  }
-
-- createuser -U postgres whateveryourlocalpostgresqluseris -P  (No to superuser, Yes to create new databse and No to create more new roles)
-- createdb -U whateveryourlocalpostgresqluseris -E utf8 -O whateveryourlocalpostgresqluseris whateveryourlocalpostgresqldbis -T template0
-- ./manage.py syncdb --migrate
-
+    createuser -U postgres whateveryourlocalpostgresqluseris -P  # No to superuser, Yes to create new database and No to create more new roles
+    createdb -U whateveryourlocalpostgresqluseris -E utf8 -O whateveryourlocalpostgresqluseris whateveryourlocalpostgresqldbis -T template0
+    ./manage.py syncdb --migrate
 
 Finally
 =====================
