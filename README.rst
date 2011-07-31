@@ -55,6 +55,7 @@ If you are using a Mac, and you are using MacPorts:
 Once you have your postgresql database installed locally, create your local db by using these commands:-
 
   * In your local_settings.py file, make sure you specify your postgresql database in the format
+
     ::
     DATABASES = {
         'default': {
