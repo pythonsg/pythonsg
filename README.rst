@@ -55,25 +55,18 @@ If you are using a Mac, and you are using MacPorts::
 Once you have your postgresql database installed locally, create your local db by using these commands:-
 
 - In your local_settings.py file, make sure you specify your postgresql database in the format
+  
+  .. code-block:: python
 
- ::
- DATABASES = {
- 
-    'default': {
-
-     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-     'NAME': 'whataveryourlocalpostgresqldbis',
-
-     'USER': 'whateveryourlocalpostgresqluseris',
-
-     'PASSWORD': 'whateveryourpasswordis',
-
-     'HOST': '',
-
-   }
-
- }
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+          'NAME': 'whataveryourlocalpostgresqldbis',
+          'USER': 'whateveryourlocalpostgresqluseris',
+          'PASSWORD': 'whateveryourpasswordis',
+          'HOST': '',
+      }
+  }
 
 - createuser -U postgres whateveryourlocalpostgresqluseris -P  (No to superuser, Yes to create new databse and No to create more new roles)
 - createdb -U whateveryourlocalpostgresqluseris -E utf8 -O whateveryourlocalpostgresqluseris whateveryourlocalpostgresqldbis -T template0
