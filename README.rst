@@ -44,7 +44,7 @@ Things will still work in general if you do not install postgresql and use sqlit
 because we do not intend to support questions/clarifications about databases which are not used on our production
 server.
 
-On your linux ubuntu, you can should be able to install postgresql by running::
+On your linux ubuntu, you should be able to install postgresql by running::
    
     sudo aptitude install postgresql-9.0 postgresql-server-dev-9.0  (Ubuntu users, pls verify)
  
