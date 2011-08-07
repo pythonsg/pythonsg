@@ -1,0 +1,47 @@
+/*  Custom CSS Styling for Python.sg  */
+/*  Calvin Cheng http://calvinx.com, http://od-eon.com */
+
+body {font:13px/1.5 Helvetica, Arial, FreeSans, sans-serif;
+	background:#e7e7e7 url(../images/background.png) repeat-x;color: #626262;font-size: 11px;padding: 20px 0 40px;}
+a {color:#F60; text-decoration:underline; outline:none}
+a:hover{color:#000;}
+a:active {outline: none;}
+.green{color:#F60;}
+.green{padding-right:15px;}
+.color{color:#F60;}
+a:focus {outline:1px dotted invert}
+hr {border:0 #ccc solid;border-top-width:1px;clear:both;height:0}
+hr.footer {border:0 #ccc solid;border-top-width:1px;clear:both;height:0;margin:0;padding-top:5px;padding-bottom:0px;}
+h1 {font-size:25px}
+h2 {font-size:23px}
+h3 {font-size:21px}
+h4 {font-size:19px}
+h5 {font-size:17px}
+h5 a{color:#666;}
+h5 a{text-decoration:none;}
+h5 a:hover{text-decoration:underline;}
+h6 {font-size:15px}
+ol {list-style:decimal}
+ul {list-style:square}
+li {margin-left:30px}
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {margin-bottom:20px}
+textarea {font-size: 10px; background-color: #FFF; border: 1px solid #aaa; height:100px;width:408px;margin-left:0;}
+
+
+/*  Header Styling */ 
+.container_16 p {padding: 10px 0;text-align: left;font-size: 12px;}
+.header{padding-top:50px;}
+.logo{line-height:0;}
+.tagline{margin-top:10px; padding:0; border-top:1px solid #BCBDBC; border-bottom:1px solid #BCBDBC; margin-bottom:30px;}
+.tagline a{text-decoration:none;}
+.grid_16 .tagline p{font-size:23px; margin-bottom:0px; padding-bottom:10px;}
+
+
+/* Header Navigation */
+ul.nav {list-style:none; margin-right:0px; margin-bottom:0; margin-top:10px; float:right; margin-right:0px;}
+ul.nav li{float:left; margin-right:0px; padding-right:0; padding-left:0;}
+ul.nav li a{text-decoration:none; color:#666;}
+ul.nav li a:hover{border-bottom:1px dashed  #666;}
+ul.nav li .selected {color:#666; font-weight:bold; border-bottom: 1px dashed #F60;} 
+
+

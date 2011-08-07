@@ -3,33 +3,34 @@
 
 {% block content %}
 {% for entry in latest %}
-  <div >
+<div class="container">
     <p >{{ entry.pub_date|date:"d F Y" }}</p>
     <div>
-      {% with entry|get_preferred_translation_from_request:request as title %}
+        {% with entry|get_preferred_translation_from_request:request as title %}
         <h1><a href="{{ title.get_absolute_url }}">{{ title }}</a></h1>
-      {% endwith %}
+        {% endwith %}
     </div>
     {% with entry.placeholders|choose_placeholder:"content" as content %}
-      {% render_placeholder content %}
+    {% render_placeholder content %}
     {% endwith %}
-  </div>
-  {% empty %}
-    <p>No entries<p>
+</div>
+{% empty %}
+<p>No entries<p>
 {% endfor %}
-<div class="pagination">
-  <span>
-    {% if page_obj.has_previous %}
-      <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-    {% endif %}
 
+<div class="pagination container">
     <span>
-      {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-    </span>
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
 
-    {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}">next</a>
-    {% endif %}
-  </span>
+        <span>
+            {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    </span>
 </div>
 {% endblock %}
