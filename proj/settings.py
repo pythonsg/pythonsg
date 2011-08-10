@@ -151,9 +151,7 @@ INSTALLED_APPS = (
     # django-cms related apps
     'cms',
     'cms.plugins.text',
-    'cms.plugins.picture',
     'cms.plugins.link',
-    'cms.plugins.file',
     'cms.plugins.snippet',
     'cms.plugins.googlemap',
     'cms.plugins.inherit',
@@ -161,6 +159,11 @@ INSTALLED_APPS = (
     'publisher',
     'menus',
     'sekizai',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
     # cmsplugin-blog related apps
     'cmsplugin_blog',
     'djangocms_utils',

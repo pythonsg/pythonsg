@@ -11,5 +11,6 @@ djangocms-utils==0.9.5
 docutils==0.8
 simple-translation==0.7.4
 django-filer==0.8.2
-django-mptt<0.4
+django-mptt==0.3.1
 easy-thumbnails==1.0-alpha-10
+-e git://github.com/stefanfoulis/cmsplugin-filer.git@ad406e61cf7abe9c55923ce4453fd83601f62ef9#egg=cmsplugin_filer
