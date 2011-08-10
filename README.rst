@@ -32,7 +32,14 @@ local development environment quickly (assuming you use virtualenvwrapper)::
     mkdir media
     cd media
     ln -s /path/to/your/venv/lib/python2.7/site-packages/cms/media/cms
+    ln -s /path/to/your/venv/lib/python2.7/site-packages/filer/media/filer
     cd ../../proj/
+
+If you want to do some serious development, you should also consider to 
+install additional packages. These will install PIL, psycopg2, ipdb,
+ipython and more::
+
+    pip install --upgrade -r dev_requirements.txt
 
 Database Set-up
 =====================
