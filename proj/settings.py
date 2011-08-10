@@ -128,6 +128,16 @@ JQUERY_UI_CSS = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smo
 # ==================================
 BLOG_PAGINATE_BY = 15
 
+# =========================
+# easy-thumbnails settings
+# =========================
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -159,6 +169,8 @@ INSTALLED_APPS = (
     'cmsplugin_blog_paginated',
     # useful 3rd party apps
     'south',
+    'easy_thumbnails',
+    'filer',
     # our own apps
 )
 
