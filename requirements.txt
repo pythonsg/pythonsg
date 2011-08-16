@@ -8,7 +8,6 @@ django-sekizai==0.4.2
 django-staticfiles==1.0.1
 django-tagging==0.3.1
 djangocms-utils==0.9.5
-docutils==0.8
 simple-translation==0.7.4
 django-filer==0.8.2
 django-mptt==0.3.1
