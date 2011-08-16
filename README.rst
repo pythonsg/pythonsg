@@ -104,13 +104,14 @@ Loading initial data
 =====================
 
 If you want to load your fresh database with some initial testdata, you can use
-our fixtures::
+our fixtures. In this case you don't need to create a superuser. It is included in the
+fixture (admin, test123)::
 
   ./manage.py loaddata fixtures/bootstrap.json
 
 The bootstrap fixtures have been created with the following command::
 
-  ./manage.py dumpdata auth cms text cmsplugin_blog > fixtures/bootstrap.json
+  ./manage.py dumpdata --natural auth cms text cmsplugin_blog > fixtures/bootstrap.json
 
 Our remote postgresql database will be made available for access only for core
 developers involved in this project.
