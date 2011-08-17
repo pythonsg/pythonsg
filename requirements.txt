@@ -1,6 +1,6 @@
 Django==1.3
 South==0.7.3
-cmsplugin-blog==0.9.8.1
+-e git://github.com/fivethreeo/cmsplugin-blog.git@7b3be3cd39202116391d55b2baecad2144324fbf#egg=cmsplugin_blog
 -e git://github.com/bitmazk/cmsplugin_blog_paginated.git@15064fdc30d13375898096e5d2a1838ccbfded8a#egg=cmsplugin_blog_paginated-dev
 django-classy-tags==0.3.3.1
 django-cms==2.1.3
