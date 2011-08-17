@@ -97,10 +97,7 @@ in the format -
 
 ::
 
-    ./manage.py syncdb
-    ./manage.py migrate cmsplugin_blog
-    ./manage.py migrate cmsplugin_pygments
-    ./manage.py migrate
+    ./manage.py syncdb --migrate
 
 
 Finally
@@ -117,11 +114,13 @@ If you want to load your fresh database with some initial testdata, you can use
 our fixtures. In this case you don't need to create a superuser. It is included
 in the fixture (admin, test123)::
 
+  ./manage.py reset contenttypes
   ./manage.py loaddata fixtures/bootstrap.json
 
 The bootstrap fixtures have been created with the following command::
 
-  ./manage.py dumpdata --natural auth cms text cmsplugin_blog cmsplugin_pygments > fixtures/bootstrap.json
+  ./manage.py dumpdata --natural contenttypes auth cms text cmsplugin_blog cmsplugin_pygments > fixtures/bootstrap.json
+
 
 Our remote postgresql database will be made available for access only for core
 developers involved in this project.
