@@ -164,6 +164,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
+    'cmsplugin_pygments',
     # cmsplugin-blog related apps
     'cmsplugin_blog',
     'djangocms_utils',
