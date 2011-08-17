@@ -97,10 +97,7 @@ in the format -
 
 ::
 
-    ./manage.py syncdb
-    ./manage.py migrate cmsplugin_blog
-    ./manage.py migrate cmsplugin_pygments
-    ./manage.py migrate
+    ./manage.py syncdb --migrate
 
 
 Finally
@@ -121,7 +118,8 @@ in the fixture (admin, test123)::
 
 The bootstrap fixtures have been created with the following command::
 
-  ./manage.py dumpdata --natural auth cms text cmsplugin_blog cmsplugin_pygments > fixtures/bootstrap.json
+  ./manage.py dumpdata --natural contenttypes auth cms text cmsplugin_blog cmsplugin_pygments > fixtures/bootstrap.json
+
 
 Our remote postgresql database will be made available for access only for core
 developers involved in this project.
