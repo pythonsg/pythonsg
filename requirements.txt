@@ -15,3 +15,5 @@ easy-thumbnails==1.0-alpha-10
 -e git://github.com/stefanfoulis/cmsplugin-filer.git@ad406e61cf7abe9c55923ce4453fd83601f62ef9#egg=cmsplugin_filer
 Pygments==1.4
 cmsplugin-pygments==0.7.3
+PIL==1.1.7
+psycopg2==2.4.2
